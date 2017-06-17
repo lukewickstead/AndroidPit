@@ -1,10 +1,10 @@
-#Calling Web Services#
-
-##Third Party Frameworks##
+# Calling Web Services #
+## Third Party Frameworks ##
 
 Consider Retrofit or Spring when calling web services.
 
-##Uri Builder##
+## Uri Builder ##
+
 URLs can be built from Uri.
 
 ```java
@@ -25,7 +25,7 @@ public static URL buildUrl(String githubSearchQuery) {
 }
 ```
 
-##Scanner##
+## Scanner ##
 
 Scanner can be used to stream the response from a http request. The delimiter of \A is used to read all of the stream in one go. 
 

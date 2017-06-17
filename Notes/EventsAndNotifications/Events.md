@@ -1,8 +1,8 @@
-#Events#
+# Events #
 
 Hooking up methods to their eventListners can be done in a few ways.
 
-##Implementing OnClickListener##
+## Implementing OnClickListener ##
 
 ```java
 public class MainActivity extends Activity implements OnClickListener {
@@ -16,7 +16,7 @@ public class MainActivity extends Activity implements OnClickListener {
 }
 ```
 
-##Anonymous Class##
+## Anonymous Class ##
 
 ```java
 public class MainActivity extends Activity {
@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 }
 ```
 
-##XML Binding##
+## XML Binding ##
 
 Or by defining the handler in the XML markup
 

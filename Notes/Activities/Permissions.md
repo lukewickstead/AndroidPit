@@ -1,4 +1,4 @@
-#Permissions#
+# Permissions #
 
 Since Android API V23 permissions are granted during run time and not during installation.
 
@@ -53,4 +53,3 @@ public void onRequestPermissionsResult(int requestCode,
     }
 }
 ```
-

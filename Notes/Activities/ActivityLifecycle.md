@@ -1,5 +1,4 @@
 # Activity Lifecycle #
-
 ## Lifecycle Methods ##
 
 The following methods are called in order.
@@ -22,7 +21,7 @@ The following methods are called in order.
 - onDestroy
 	- The final call before an activity is destroyed due to the activity finishing or being temporarily destroying to save memory; distinguished by isFinishing().
 
-##State and Application Lifecycle##
+## State and Application Lifecycle ##
 
 When a device is re-orientated the application is destroyed and then created. The same as if the application would have been shut and reopened.
 
@@ -37,7 +36,7 @@ Depending upon the view type, and if they have an id, some views will automatica
 	- TextView
 	- Button
 
-###Persisting Sate###
+### Persisting Sate ###
 
 You can manually persist the state by subclassing onSaveInstanceState and onRestoreInstanceState or onCreate. The state is persisted via a bundle (key value pair entity)
 
@@ -66,7 +65,7 @@ protected void onSaveInstanceState(Bundle outState) {
 }
 ```
 
-##Handle Config Changes##
+## Handle Config Changes ##
 
 A final alternative is to handle the change of device orientation manually, thought this is discouraged:
 

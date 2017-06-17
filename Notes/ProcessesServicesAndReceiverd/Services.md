@@ -1,6 +1,5 @@
-#Services#
-
-##Starting Services##
+# Services #
+## Starting Services ##
 
 There are three ways to start a service.
 
@@ -12,7 +11,7 @@ There are three ways to start a service.
 	- bindService() allows communication to the bound components. A good example is a medai player and its service.
 
 
-###Using StartService###
+### Using StartService ###
 
 Even though we have inherited IntentService we would still run on the UI / calling thread. Use an AsyncTask to thread the service.
 

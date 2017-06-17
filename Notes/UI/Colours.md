@@ -1,4 +1,4 @@
-#Colours#
+# Colours #
 
 In res/values/colours.xml
 
@@ -11,4 +11,3 @@ ContextCompat.getColor can be used to get a colour from its resource id:
 ```java
 ContextCompat.getColor(context, R.color.aColour)
 ```
-

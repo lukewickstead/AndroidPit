@@ -1,4 +1,4 @@
-#JUnit#
+# JUnit #
 
 - https://developer.android.com/topic/libraries/testing-support-library/index.html#ajur-junit
 
@@ -21,7 +21,7 @@ public class MyTest {
 }
 ```
 
-##Hamcrest##
+## Hamcrest ##
 
 - http://hamcrest.org/JavaHamcrest/
 - https://code.google.com/archive/p/hamcrest/wikis/Tutorial.wiki
@@ -38,9 +38,7 @@ assertThat (referenceType, hasItem(allOf(
     hasProperty("C", equalTo("C")))));
 ```
 
-
-
-##Expecting Exceptions##
+## Expecting Exceptions ##
 
 ```java
 @Test(expected = IllegalArgumentException.class)
@@ -48,7 +46,7 @@ public void doSomething() {
 }
 ```
 
-##Test Fixture/Test Setup/Tear Down##
+## Test Fixture/Test Setup/Tear Down ##
 
 We can annotate our test and test fixture setup and tear down methods with the following attributes.
 

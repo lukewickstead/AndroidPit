@@ -1,4 +1,4 @@
-##Progress Bar##
+## Progress Bar ##
 
 The ProgressBar is the spiny progress bar thing on android
 

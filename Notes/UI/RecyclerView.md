@@ -1,10 +1,9 @@
-#RecyclerView#
+# RecyclerView #
 
 RecyclerView can be used as a list view when there is a large number of items in the list.
 
 
 ```java
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
     private static final String TAG = GreenAdapter.class.getSimpleName();
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 }
 ```
 
-##RecyclerView Swiping##
+## RecyclerView Swiping ##
 
 The following shows how we can handle moving and swiping on a RecyclerView
 

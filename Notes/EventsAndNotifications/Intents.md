@@ -1,4 +1,4 @@
-#Intents#
+# Intents #
 
 Intents are a messages requesting functionality to happen. They are handled asynchronously.
 
@@ -19,7 +19,7 @@ We have already seen intents by defining our Activity as being a launcher
 </activity>
 ```
 
-##Explicit Intents##
+## Explicit Intents ##
 
 An explicit intent knows what Activity it is requesting via it's class name.
 
@@ -41,7 +41,7 @@ An explicit intent knows what Activity it is requesting via it's class name.
 startActivity(new Intent(this, FoodActivity.class));
 ```
 
-#Implicit Intents#
+## Implicit Intents ##
 
 Implicit intents are those who register an action, the opening activity is decided by the system looking at which applications can perform the intent. Where multiple applications exist the user is asked to select one.
 
@@ -73,7 +73,7 @@ Any application can then request this action to be performed:
 startActivity(new Intent("com.pluralsight.action.HELLO_WORLD"));
 ```
 
-##Passing Data With An Intent##
+## Passing Data With An Intent ##
 
 Data can be passed via the intent's putExtra method.
 
@@ -111,7 +111,7 @@ if(extras != null){
 }
 ```
 
-##Intent Builder##
+## Intent Builder ##
 
 The intent builder can be used to define complex intents
 
@@ -124,7 +124,7 @@ ShareCompat.IntentBuilder
 .startChooser();
 ```
 
-##Intent Filters##
+## Intent Filters ##
 
 - https://developer.android.com/guide/components/intents-filters.html#Resolution
 
@@ -138,7 +138,7 @@ We can filter in three ways:
 
 The rules are accumulative and be be applied multiple times to produce complex filters and combinations of filters.
 
-##Filter By Action##
+## Filter By Action ##
 
 ```xml
 <intent-filter>
@@ -147,7 +147,7 @@ The rules are accumulative and be be applied multiple times to produce complex f
 </intent-filter>
 ```
 
-##Filter By Category##
+## Filter By Category ##
 
 ```xml
 <intent-filter>
@@ -156,7 +156,7 @@ The rules are accumulative and be be applied multiple times to produce complex f
 </intent-filter>
 ```
 
-##Filter By Data##
+## Filter By Data ##
 
 ```xml
 <intent-filter>
@@ -167,18 +167,18 @@ The rules are accumulative and be be applied multiple times to produce complex f
 
 Not all intents can be registered in the manifest as they require the application to be started; battery  changed and time tick for example.
 
-##Common System Interactions##
+## Common System Interactions ##
 
 Useful code for interacting with bits of the system:
 
-###Calling via the dial screen###
+### Calling via the dial screen ###
 
 ```java
 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:012345678"));
 startActivity(intent);
 ```
 
-###Take a photo and return it###
+### Take a photo and return it ###
 
 ```java
 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -192,7 +192,7 @@ intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(targetDir, "Pictu
 startActivityForResult(intent, CALLBACK_ID_CAMERA);
 ```
 
-###Select and return a contact###
+### Select and return a contact ###
 
 ```java
 Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
@@ -217,7 +217,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-###Requesting a map at a location###
+### Requesting a map at a location ###
 
 ```java
 String addressString = "Bristol, UK;

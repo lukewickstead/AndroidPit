@@ -1,11 +1,10 @@
-#Fragments#
+# Fragments #
 
 - https://developer.android.com/guide/components/fragments.html
 
 Fragments allow us to segment and reuse parts of a UI. They are like includes but they have their own in-dependant lifecycle.
 
-
-##Includes##
+## Includes ##
 
 These allow us to segment complex parts of a ui an to reuse them
 

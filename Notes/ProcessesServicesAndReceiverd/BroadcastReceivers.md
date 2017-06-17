@@ -1,6 +1,5 @@
-#Broadcast Receivers#
-
-##Implement##
+# Broadcast Receivers #
+## Implement ##
 
 To receive a broadcast event, implement a class inheriting from BroadcastReceiver.
 
@@ -14,7 +13,8 @@ private class ChargingBroadcastReceiver extends BroadcastReceiver {
     }
 }
 ```
-##Register##
+
+## Register ##
 
 Register and register the receiver during the activity onResume and onPause methods.
 
@@ -41,7 +41,7 @@ protected void onPause() {
 }
 ```
 
-##Manifest Registration##
+## Manifest Registration ##
 
 You can also register the broadcast receiver in the manifest
 
@@ -63,7 +63,7 @@ public class AirplaneModeReceiver extends BroadcastReceiver{
 }
 ```
 
-##Receiving A One Off Broadcast##
+## Receiving A One Off Broadcast ##
 
 The method registerReceiver can be passed null for the receiver to notify that it is a one shot synchronous call.
 

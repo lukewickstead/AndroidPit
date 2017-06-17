@@ -1,13 +1,12 @@
-#Data Binding#
-
-##Prerequisites##
+# Data Binding #
+## Prerequisites ##
 
 - Gradle plugin 1.3.0 or later
 - Data binding - 1.0-rc1
 - Android Support Repository
 - Android Support Library
 
-##Basic Data Binding##
+## Basic Data Binding ##
 
 The simplest form of binding involves a data source. Each element can have its value bound to it by binding it an identifier of the data source.
 
@@ -49,7 +48,7 @@ dataBinding {
     }
 ```
 
-##Fragment Binding##
+## Fragment Binding ##
 
 When binding to fragments the FragmentDataBinding should be used to inflate the view with binding within the onCreateView.
 ```java
@@ -65,7 +64,7 @@ public class DataFragment extends Fragment {
     }
 ```
 
-##Binding Included Views##
+## Binding Included Views ##
 
 In the main layout:
 
@@ -120,9 +119,8 @@ Retrieve binding from an already inflated view
 FragmentDataBinding binding = DataBindingUtil.getBinding(view);
 ```
 
-##Data Element##
-
-###Variable Element###
+## Data Element ##
+### Variable Element ###
 
 ```xml
 <data>
@@ -138,7 +136,7 @@ There can be multiple variables. These can hold reference or value types, they d
 
 Where a type is generic < should be encoded with "& l t ;"
 
-###Import Element###
+### Import Element ###
 
 The import tag can be used to shorten the type name space to a class.
 
@@ -158,7 +156,7 @@ Imports can be used to define alias classes.
         alias="TheDataSource"/>
 ```
 
-###Data class attribute###
+### Data class attribute ###
 
 By default, a Binding class is generated based on the name of the layout file; upper case and with no underscore and suffixed with Binding; activity_main becomes ActivityMainBinding within the module  names pace.
 
@@ -171,7 +169,7 @@ The class attribute can be used to control the name of the binding class. The fo
 
 '.' can be used to change the name space; . defines the module name space .xxx will put it inside the xxx node of the module.
 
-###Layout Expression Language###
+### Layout Expression Language ###
 
 A rich expression language exists to produce rich bindings.
 
@@ -185,7 +183,7 @@ android:text="@{item.isSpecial ? @string/special(item.map[`price`]) : @string/pr
 android:text='@{"" + user.age}'
 ```
 
-##Custom Bindings##
+## Custom Bindings ##
 
 @BndingMethods and @BindingMethod can be used to override the inferred getter and setter of bound properties.
 
@@ -268,7 +266,7 @@ Android strips all name spaces of the attributes unless it is android, here app:
 
 - https://news.realm.io/news/data-binding-android-boyar-mount/
 
-##Event Binding##
+## Event Binding ##
 
 We are binding actions and not values.
 
@@ -322,7 +320,7 @@ We then bind on the button by
 android:onClick="@{listeners}"/>
 ```
 
-##Dynamic Binding##
+## Dynamic Binding ##
 
 Sometimes what we bind on is only known at run-time; for example lists and other repeatable data lists.
 
@@ -389,11 +387,9 @@ public class ActivityMainBinder {
 }
 ```
 
-##Observables##
-
-###Mediator vs Observer Behaviour Patterns###
-
-####Mediator####
+## Observables ##
+### Mediator vs Observer Behaviour Patterns ###
+#### Mediator ####
 
 The mediator receives a notification of a change from one element and then updates the objects peers based upon the change
 
@@ -453,7 +449,7 @@ public void onChange(String message) {
 }
 ```
 
-####Observer####
+#### Observer ####
 
 The observable keeps a registry of observers
 
@@ -472,7 +468,7 @@ Perhaps observable are more working on properties and can be more targeted.
 
 Mediator allows better decoupling than observer pattern.
 
-###Implementing Observers###
+### Implementing Observers ###
 
 ```java
 public void onCheckChange(Compoundbutton biew, boolean isChecked) {
@@ -518,7 +514,7 @@ There is an observable field type for each primative type as well observableFiel
 
 ObservableList<>, XXXArrayList, XXXMap, XXXArrayMap.
 
-#Pitfalls#
+# Pitfalls #
 
 Gist of base presenter and view class along with their concrete implementation
 

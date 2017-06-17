@@ -1,6 +1,5 @@
-#SQLite#
-
-##SQLiteOpenHelper##
+# SQLite #
+## SQLiteOpenHelper ##
 
 The SQLiteOpenHelper is used to deploy, upgrade and open the database. 
 
@@ -30,7 +29,8 @@ public class XXXDbHelper extends SQLiteOpenHelper {
 }
 
 ```
-##Data Model Definition##
+
+## Data Model Definition ##
 
 The BaseColumns class is sub classed to define the shape of the table. This defines the _ID column automatically.
 
@@ -44,7 +44,7 @@ public class XXXContract {
 }
 ```
 
-##Reading Data##
+## Reading Data ##
 
 Data can be read via cursors
 
@@ -72,7 +72,7 @@ if (mCursor.moveToPosition(position)) {
 mCursor.close()
 ```
 
-##Inserting Data##
+## Inserting Data ##
 
 Data can be inserted through ContentValues
 
@@ -101,7 +101,7 @@ finally
 }
 ```
 
-##Deleting Data##
+## Deleting Data ##
 
 All data can be deleted through the delete command.
 

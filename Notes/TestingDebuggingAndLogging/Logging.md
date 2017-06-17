@@ -1,6 +1,5 @@
-#Logging#
-
-##Log##
+# Logging #
+## Log ##
 
 ```java
 private static final String TAG = MainActivity.class.getSimpleName();
@@ -18,7 +17,7 @@ The thread and process id can be grabbed
 String logMessage = String.format("%s, Process ID:%d, Thread ID:%d", label, android.os.Process.myPid(), android.os.Process.myTid());
 ```
 
-##Timber##
+## Timber ##
 
 Timber extends the default Android Log class.
 

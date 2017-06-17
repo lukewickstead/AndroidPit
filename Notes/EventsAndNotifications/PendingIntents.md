@@ -1,8 +1,8 @@
-#Pending Intents#
+# Pending Intents #
 
 A pending intent is an intent which will you can be defined to be performed later by another activity on your behalf and using your activity's permissions and identity.
 
-##Creating Pending Intents##
+## Creating Pending Intents ##
 
 Below we are asking the manager to perform an intent in a predefined amount of time.
 
@@ -17,7 +17,7 @@ long alarmTime = SystemClock.elapsedRealtime() + 5000;
 alarmManager.set(AlarmManager.ELAPSED_REALTIME, alarmTime, pi);
 ```
 
-##Pending Intent Flags##
+## Pending Intent Flags ##
 
 The last parameter to PendingIntent.getActivity defines what to do if multiple intents are being raised:
 
@@ -32,7 +32,7 @@ The last parameter to PendingIntent.getActivity defines what to do if multiple i
 
 Intents are considered equal based upon the resolution of their intent filters.
 
-##Pending Intents & Notifications##
+## Pending Intents & Notifications ##
 
 Pending intents can be sent to the notification manager.
 

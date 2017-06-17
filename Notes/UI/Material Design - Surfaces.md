@@ -1,6 +1,6 @@
-#Material Design - Surfaces#
+# Material Design - Surfaces #
 
-##Surfaces##
+## Surfaces ##
 
 Allow segmentation; think of areas defining their own shadow.
 
@@ -13,7 +13,7 @@ We can get the standard preferred elevation and shadows for all element types he
 
 https://material.io/guidelines/material-design/elevation-shadows.html#objects-in-3d-space-elevation
 
-##Fab - Floating Action Button##
+## Fab - Floating Action Button ##
 
 Floats above all content and should be higher. Can scroll with content. Should have standard size and elevation; 56dp/40p diameter. Elevation of resting 6dp and pressed 12dp. Sits well on seems of two surfaces and corers Should only use a maximum of one per screen. if you are struggling to identify which action should be a fab then consider having none.
 
@@ -45,7 +45,7 @@ android:layout_toEndOf="@+id/fab" />
 
 When adding in appCompat you should change the AppThem from a material one to an appCompat one.
 
-##Surface Reaction##
+## Surface Reaction ##
 
 Ripple of action when you touch something.
 
@@ -53,7 +53,7 @@ Button; android:background="@drawable/oval_ripple.xml" -> <ripple><item><shape>
 
 Then use a stateListAnimator for animating upon state. We animate transalationZ and not elevation. These are added to the actual ones.
 
-##Creating Paper Transformations##
+## Creating Paper Transformations ##
 
 https://github.com/udacity/ud862-samples/tree/master/SimplePaperTransformations
 
@@ -64,7 +64,7 @@ onClick. ViewAnimationUtils.createCircularReveal(view, centerX, centgerY, startR
 vuew.setBackgroundColor
 anim.start();
 
-##Responding To Scroll Events##
+## Responding To Scroll Events ##
 
 - https://developer.android.com/reference/android/support/design/widget/AppBarLayout.LayoutParams.html#setScrollFlags(int)
 - https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.LayoutParams.html#setBehavior(android.support.design.widget.CoordinatorLayout.Behavior)

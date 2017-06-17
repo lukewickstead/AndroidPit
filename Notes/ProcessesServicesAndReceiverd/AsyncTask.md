@@ -1,8 +1,8 @@
-#AsyncTask#
+# AsyncTask #
 
 AsyncTask provides an abstraction to creating threads.
 
-##Defining The Task##
+## Defining The Task ##
 
 The three type parameters are the task parameter type passed into doInBackground,  the type of the progress and the result type of the task which is passed into onPostExecute.
 
@@ -26,8 +26,7 @@ public class XXXTask extends AsyncTask<URL, Void, String> {
 }
 ```
 
-
-##Calling The Task##
+## Calling The Task ##
 
 You can then new up the class and call execute to run it.
 

@@ -1,4 +1,4 @@
-#Espresso#
+# Espresso #
 
 Espresso is a framework which allows us to test Android applications where the normal testing tools are not enough.
 The espresso cheat sheet along with the espresso testing examples are great resources.
@@ -7,7 +7,7 @@ The espresso cheat sheet along with the espresso testing examples are great reso
 - https://github.com/googlesamples/android-testing/tree/master/ui/espresso/IntentsBasicSample
 - https://google.github.io/android-testing-support-library/docs/espresso/cheatsheet
 
-##Setting Up##
+## Setting Up ##
 
 Register support annotations and espresso core within the gradle build file.
 
@@ -16,7 +16,7 @@ androidTestCompile 'com.android.support:support-annotations:25.1.0'
 androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
 ```
 
-##AndroidJUnit4##
+## AndroidJUnit4 ##
 
 AndroidJUnit4 allows us to control the activation of our Android application along with Espresso components.
 
@@ -26,32 +26,58 @@ public class MyClass {
 }
 ```
 
-##Testing Views##
+## Testing Views ##
 
 A good example can be found here:
 
-- https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSample/app/src/androidTest/java/com/example/android/testing/espresso/BasicSample/ChangeTextBehaviorTest.java
+onView and perform can be used to query and act upon our UI views
+
+- https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSample
 
 ```java
-// Perform something in the view.
-onView(withId(R.id.editTextUserInput))
-    .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
-onView(withId(R.id.changeTextBt)).perform(click());
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class MainActivity {
 
-// Check that the text was changed.
-onView(withId(R.id.textToBeChanged)).check(matches(withText(STRING_TO_BE_TYPED)));
+    public static final String STRING_TO_BE_TYPED = "Espresso";
+
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
+            MainActivity.class);
+
+    @Test
+    public void changeText() {
+        // Type text and then press the button.
+        onView(withId(R.id.editTextUserInput))
+                .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+        onView(withId(R.id.changeTextBt)).perform(click());
+
+        // Check that the text was changed.
+        onView(withId(R.id.textToBeChanged)).check(matches(withText(STRING_TO_BE_TYPED)));
+    }
+}
 ```
 
-##Adapter Views## 
+## Adapter Views ##
 
-Espresso requires onData() to test ListView and GridView as the item might not be loaded due to their dynamic data loading. onDate() will load the item onto the screen before we test using it. 
+- https://github.com/googlesamples/android-testing/blob/master/ui/espresso/DataAdapterSample
+
+Espresso requires onData() to test ListView and GridView as the item might not be loaded due to their dynamic data loading. onData() will load the item onto the screen before we test using it. 
 
 To help us further specify the item in the AdapterView we’re interested in, we can use a DataOption method such as inAdapterView() or atPosition().
 
-```java
+onRow can be used to scroll to a row.
 
+```java
+ onRow(TEXT_ITEM_30).onChildView(withId(R.id.rowContentTextView)).perform(click());
+```
+
+we can then grab the row for querying.
+
+```java
 onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(1).perform(click());
 ``` 
+
 
 ## Testing Intents ##
 
@@ -74,18 +100,13 @@ It uses the intending() method associated with stubbing and takes not(isInternal
 resultCode - Is the code sent back to the original activity. RESULT_OK indicates the operation was successful.
 resultData - Is the data to send back to the original activity. null indicates no data is sent back.
 
-
 @Before - grantPhonePermission()
 
 Intended for Android M+, ensures permission to use the phone is granted before running the DialerActivityTest.
 
-
-
 @Test - pickContactButton_click_SelectsPhoneNumber()
 
 This test mocks a user clicking the "Contact Button" in the DialerActivity, an intent to the ContactsActivity is then stubbed to return a hard-coded VALID_PHONE_NUMBER, and the finally the test checks that the phone number sent back is displayed in the UI.
-
-
 
 hasComponent() can match an intent by class name, package name or short class name. Here we match by ShortClassName for the ContactsActivity
 
@@ -178,7 +199,7 @@ public class DialerActivityTest {
 ```
 @Test
     public void typeNumber_ValidInput_InitiatesCall() {
-   ```
+```
 
 ```
 androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
@@ -267,17 +288,20 @@ To summarize all the new classes and connections in this specific example:
 Dont forget to unregister the idling resource
 Register idling resource in gradle dependency
 
+```xml
  compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+ ```
  
- @After
-     public void unregisterIdlingResource() {
--
-+        if (mIdlingResource != null) {
-+            Espresso.unregisterIdlingResources(mIdlingResource);
-+        }
-     }
+ ```java
+@After
+public void unregisterIdlingResource() {
+	if (mIdlingResource != null) {
+        	Espresso.unregisterIdlingResources(mIdlingResource);
+        }
+}
+```
 
-##More##
+## More ##
     
 Espresso Web - An API for writing automated tests for apps that contain one or more WebViews. Espresso Web reduce the boilerplate code needed to interact with these WebViews.
 
@@ -289,7 +313,7 @@ Espresso for RecylcerViews - Espresso testing for RecyclerViews works different 
 - https://google.github.io/android-testing-support-library/docs/espresso/lists/#recyclerviews
 - https://developer.android.com/studio/test/espresso-test-recorder.html
 
-##Espresso Test Recorder##
+## Espresso Test Recorder ##
 
 Android Studio also has a an Espresso Test Recorder which allows you to create UI tests by simply recording your interactions on a device and the Test Recorder will autogenerate the test code for you!
 
@@ -297,12 +321,11 @@ The tests are written using the same Espresso Testing framework that we just cov
 
 https://developer.android.com/studio/test/espresso-test-recorder.html
 
-
 RecyckerView
 
 https://google.github.io/android-testing-support-library/docs/espresso/lists/#recyclerviews
 
-##UI Automator##
+## UI Automator ##
 
 UI Automator - Framework for cross-app functional UI testing between the system and installed apps
 https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator

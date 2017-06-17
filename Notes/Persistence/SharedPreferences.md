@@ -1,6 +1,5 @@
-#Shared Preferences#
-
-##Shared Preferences##
+# Shared Preferences #
+## Shared Preferences ##
 
 Android can help with saving settings or shared preferences.
 
@@ -8,7 +7,7 @@ Call PreferenceManager.getDefaultSharedPreferences(context) to access an activit
 
 The file will be stored in the applications file are and will only be accessible by your application.
 
-##Default Shared Preferences##
+## Default Shared Preferences ##
 
 Default shared preferences can be used to save value types as key value pairs.
 
@@ -44,7 +43,7 @@ The function editor.clear() can be used to remove all entries
 
 The function editor.remove(String key); can be used to remove one entry based upon its key.
 
-##Gson and Preferences##
+## Gson and Preferences ##
 
 The third party library Gson can be used to serialise reference types to strings to save in the shared preference file.
 
@@ -54,7 +53,7 @@ String jsonString = gson.toJson(employeeObject, Employee.class);
 Employee empObj = gson.fromJson(jsonString, Employee.class);
 ```
 
-##Preference From Resource File##
+## Preference From Resource File ##
 
 Android can inflate settings from a layout file and manage the saving of them automatically.
 

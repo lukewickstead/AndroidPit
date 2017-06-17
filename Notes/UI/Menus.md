@@ -1,6 +1,6 @@
-#Menu#
+# Menu #
 
-##Menu XML Definition##
+## Menu XML Definition ##
 
 The menu is defined as an xml file.
 
@@ -18,7 +18,7 @@ The menu is defined as an xml file.
 - app:showAsAction set if the icon is set as a button in the menu
 - android:orderInCategory is the order in the list
 
-##Inflating Menus##
+## Inflating Menus ##
 
 Within the activity you inflate the menu in onCreateOptionsMenu and respond to events within onOpstionsItemSelected.
 
@@ -32,7 +32,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 ```
 
-##Menus Actions##
+## Menus Actions ##
 
 ```java
 @Override

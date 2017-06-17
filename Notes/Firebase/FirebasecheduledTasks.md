@@ -1,4 +1,4 @@
-#Firebase Scheduled Tasks#
+# Firebase Scheduled Tasks #
 
 Firebase can be used to schedule tasks. The following steps are required:
 
@@ -8,7 +8,7 @@ Firebase can be used to schedule tasks. The following steps are required:
 - Register Firebase Job Service In Te Manifest Declaration
 - Register & Configure Firebase Job Service With The Dispatcher##
 
-##Register Firebase And Google Play Services##
+## Register Firebase And Google Play Services ##
 
 Information can be found here:
 
@@ -16,7 +16,7 @@ Information can be found here:
 
 You will also need to create a Google Play Services account. 
 
-##Creating A Firebase Job Service##
+## Creating A Firebase Job Service ##
 
 ```java
 public class XXXJobService extends JobService {
@@ -50,7 +50,7 @@ public class XXXJobService extends JobService {
 }
 ```
 
-##Register Firebase Job Service In The Manifest Declaration##
+## Register Firebase Job Service In The Manifest Declaration ##
 
 ```xml
 <service
@@ -62,7 +62,7 @@ public class XXXJobService extends JobService {
 </service>
 ```
 
-##Register & Configure Firebase Job Service With The Dispatcher##
+## Register & Configure Firebase Job Service With The Dispatcher ##
 
 ```java
 private static final int REMINDER_INTERVAL_MINUTES = 15;

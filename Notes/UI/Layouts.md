@@ -1,4 +1,4 @@
-#Layouts #
+# Layouts #
 
 Layouts are inflated in an activity within the onCreate method via the setContentView method.
 
@@ -12,7 +12,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-##Layout Types##
+## Layout Types ##
 
 - Constraint Layout
 	- Useful for complex responsive(ish) views; setting up constraints for rules of how objects should be displayed relative to each other.
@@ -24,7 +24,7 @@ protected void onCreate(Bundle savedInstanceState) {
 - FrameLayout
 - TableLayout
 
-##Common Attributes##
+## Common Attributes ##
 
 - Size
 	- android:layout\_width
@@ -64,17 +64,19 @@ android:orientation="horizontal" >
 </LinearLayout>
 ```
 
-##Relative Layouts##
+## Relative Layouts ##
 
 Relative layout allows children to define where they are relative to their parent or other elements
 
-###Relative to sibling###
+### Relative to sibling ###
+
 - android:layout_above
 - android:layout_below
 - android:layout_toLeftOf
 - android:layout_toRightOf
 
-###Relative to parent###
+### Relative to parent ###
+
 - android:layout_alignParentTop
 - android:layout_alignParentBottom
 - android:layout_alignParentLeft
@@ -83,7 +85,8 @@ Relative layout allows children to define where they are relative to their paren
 - android:layout_centerVertical
 - android:layout_centerInParent
 
-###Relative alignment###
+### Relative alignment ###
+
 - android:layout_alignTop
 - android:layout_alignBottom
 - android:layout_alignLeft
@@ -96,7 +99,7 @@ The following can be used to align to parent if their siblng is gone. android:la
 
 android:visibility="gone" // element is not visible and also takes up no space!
 
-##FrameLayout##
+## FrameLayout ##
 
 FrameLayout is useful when overlapping views or one element.
 Can be used with gravity margin etc.
@@ -104,7 +107,7 @@ Has android:foreground to allow setting drawable element on the foreground of al
 
 android:foregroundGravity="top|left" can be used for the gravioty if the element is to be positioned
 
-##Table Layout##
+## Table Layout ##
 
 TableLayout is used with TableRow elements and TextView to define cells.
 
@@ -114,7 +117,7 @@ TableLayout is used with TableRow elements and TextView to define cells.
 - android:stretchColumns can be used to stretch a cell into multiple columns
 - android:collapseColumns
 
-##Hierarchy Viewer##
+## Hierarchy Viewer ##
 
 This seems to be available in android studio without via the adb
 

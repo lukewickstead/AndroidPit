@@ -1,6 +1,6 @@
-#Content Provider#
+# Content Provider #
 
-##Reading Content##
+## Reading Content ##
 
 Content providers expose their data via the contentResolver and their URI.
 
@@ -9,7 +9,7 @@ ContentResolver resolver = getContentResolver();
 Cursor cursor = resolver.query(ProviderContract.CONTENT_URI, null, null, null, null);
 ```
 
-##Creating Content Provider##
+## Creating Content Provider ##
 
 A contract is used to defined the data contract
 
@@ -139,7 +139,7 @@ public class XXXContentProvider extends ContentProvider {
 
 We can then query, inswert, delete data as required via the content resolver.
 
-##Insert Data##
+## Insert Data ##
 
 ```java
 ContentValues contentValues = new ContentValues();
@@ -147,7 +147,7 @@ contentValues.put(XXXContract.XXXEntry.COLUMN_ONE, input);
 Uri uri = getContentResolver().insert(XXXContract.XXXEntry.CONTENT_URI, contentValues);
 ```
 
-##Get all records##
+## Get all records ##
 
 ```java
 return getContentResolver().query(

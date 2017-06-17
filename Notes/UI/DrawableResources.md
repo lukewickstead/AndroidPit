@@ -19,7 +19,7 @@ These can then be included in elements
  	android:background="@drawable/foo/">
 ```
 
-##Images##
+## Images ##
 
 Images can be directly included via the srcCompat field
 
