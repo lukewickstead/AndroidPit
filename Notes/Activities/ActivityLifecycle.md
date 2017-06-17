@@ -1,6 +1,6 @@
-#Activity Lifecycle#
+# Activity Lifecycle #
 
-##Lifecycle Methods##
+## Lifecycle Methods ##
 
 The following methods are called in order.
 
