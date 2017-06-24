@@ -1,4 +1,7 @@
 # SQLite #
+
+- https://developer.android.com/training/basics/data-storage/databases.html
+
 ## SQLiteOpenHelper ##
 
 The SQLiteOpenHelper is used to deploy, upgrade and open the database. 
@@ -19,7 +22,7 @@ public class XXXDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         // Create a table to hold waitlist data
         final String SQL_CREATE_TABLE = "CREATE TABLE.... ";
-        sqLiteDatabase.execSQL(SQL_CREATE_WAITLIST_TABLE);
+        sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
     }
 
     @Override

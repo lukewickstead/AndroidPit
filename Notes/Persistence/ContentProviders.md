@@ -21,7 +21,7 @@ public class XXXContract {
     public static final String PATH_XXX = "XXX";
 
     public static final class TaskEntry implements BaseColumns {
-        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_TASKS).build();
+        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_XXX).build();
         public static final String TABLE_NAME = "XXX";
         public static final String COLUMN_ONE = "One";
     }

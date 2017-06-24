@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wickstead.adaptivereminder">
 
-    package="com.wickstead.myapplication">
+    <permission android:name="com.wickstead.adaptivereminder.READ" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name="com.wickstead.adaptivereminder.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.wickstead.adaptivereminder.data.RemindersDataContentProvider"
+            android:authorities="com.wickstead.adaptivereminder.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="true"
+            android:readPermission="com.wickstead.adaptivereminder.READ" />
     </application>
-
 </manifest>
